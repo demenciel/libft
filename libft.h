@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:31:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/12 13:22:15 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:27:53 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char    *ft_strtrim(char const *s1, char const *set);
 char	**ft_split(const char *s, char c);
 char    *ft_itoa(int n);
+char	*ft_substr(const char *str, unsigned int start, size_t len);
 
 #endif
