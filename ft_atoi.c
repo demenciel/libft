@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 12:27:55 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 15:53:55 by acouture         ###   ########.fr       */
+/*   Created: 2023/01/08 15:13:28 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/10 15:05:47 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+int	ft_atoi(const char *str)
 {
-	char			*join_str;
-	unsigned int	i;
-	unsigned int	j;
+	int	result;
+	int	i;
+	int	sign;
 
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	join_str = malloc(((ft_strlen(s1) + 1) + ft_strlen(s2)) * sizeof(char));
-	if (join_str == NULL)
-		return (NULL);
-	while (s1[i])
+	result = 0;
+	sign = 1;
+	if (!str)
+		return (0);
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
 	{
-		join_str[i] = s1[i];
+		sign = -1;
 		i++;
 	}
-	while (s2[j])
-	{
-		join_str[i] = s2[j];
+	else if (str[i] == '+')
 		i++;
-		j++;
+	while (ft_isdigit(str[i]))
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
 	}
-	join_str[i] = '\0';
-	return (join_str);
+	return (result * sign);
 }

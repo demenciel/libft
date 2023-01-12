@@ -1,32 +1,25 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 12:23:53 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/10 14:10:15 by acouture         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_calloc(size_t count, size_t size)
+#include "libft.h"
+
+void	*ft_calloc(size_t count, size_t size)
 {
-    size_t total_size = (count * size);
-    void *ptr = malloc(total_size);
+	size_t	total_size;
+	void	*ptr;
 
-    if (ptr)
-        memset(ptr, 0, total_size);
-    return (ptr);
-}
-
-int main()
-{
-    size_t count = 10;
-    size_t size = 10;
-    void *ptr = calloc(count, size);
-    if (ptr == NULL) {
-        printf("Error: calloc failed\n");
-        return 1;
-    }
-
-    size_t count1 = 10;
-    size_t size1 = 10;
-    void *ptr1 = ft_calloc(count1, size1);
-    if (ptr1 == NULL) {
-        printf("Error: ft_calloc failed\n");
-        return 1;
-    }
+	total_size = (count * size);
+	ptr = malloc(total_size);
+	if (ptr)
+		ft_memset(ptr, 0, total_size);
+	return (ptr);
 }

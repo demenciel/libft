@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 12:27:55 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 15:53:55 by acouture         ###   ########.fr       */
+/*   Created: 2023/01/08 13:50:11 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/08 15:11:45 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char			*join_str;
-	unsigned int	i;
-	unsigned int	j;
+	size_t	needle_len;
 
-	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	join_str = malloc(((ft_strlen(s1) + 1) + ft_strlen(s2)) * sizeof(char));
-	if (join_str == NULL)
-		return (NULL);
-	while (s1[i])
+	if (*needle == '\0')
+		return ((char *)haystack);
+	needle_len = ft_strlen(needle);
+	while (*haystack != '\0' && len-- >= needle_len)
 	{
-		join_str[i] = s1[i];
-		i++;
+		if (*haystack == *needle && ft_memcmp(haystack, needle,
+				needle_len) == 0)
+			return ((char *)haystack);
+		haystack++;
 	}
-	while (s2[j])
-	{
-		join_str[i] = s2[j];
-		i++;
-		j++;
-	}
-	join_str[i] = '\0';
-	return (join_str);
+	return (NULL);
 }

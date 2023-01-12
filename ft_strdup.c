@@ -1,25 +1,26 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 12:25:46 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/10 15:24:22 by acouture         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strdup(const char *str)
+#include "libft.h"
+
+char	*ft_strdup(const char *str)
 {
-    size_t          size_str;
-    char            *copy_str;
+	size_t	size_str;
+	char	*copy_str;
 
-    size_str = strlen(str) + 1;
-    copy_str = malloc(size_str);
-    if (copy_str == NULL)
-        return (NULL);
-    strlcpy(copy_str, str, size_str);
-    return (copy_str);
-}
-
-int main()
-{
-    char string[] = "Hello, world! sadsa d";
-    printf("%s\n", strdup(string));
-
-    char string1[] = "Hello, world! sasfaf";
-    printf("%s\n", ft_strdup(string1));
+	size_str = ft_strlen(str) + 1;
+	copy_str = malloc(size_str);
+	if (copy_str == NULL)
+		return (NULL);
+	ft_strlcpy(copy_str, str, size_str);
+	return (copy_str);
 }

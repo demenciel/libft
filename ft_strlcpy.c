@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 12:27:55 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 15:53:55 by acouture         ###   ########.fr       */
+/*   Created: 2023/01/06 13:03:33 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/10 15:03:50 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char			*join_str;
 	unsigned int	i;
-	unsigned int	j;
+	size_t			srcsize;
 
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	join_str = malloc(((ft_strlen(s1) + 1) + ft_strlen(s2)) * sizeof(char));
-	if (join_str == NULL)
-		return (NULL);
-	while (s1[i])
+	if (!dst || !src)
+		return (0);
+	srcsize = ft_strlen(src);
+	if (dstsize == 0)
+		return (srcsize);
+	while (src[i] && (i < dstsize - 1))
 	{
-		join_str[i] = s1[i];
+		dst[i] = src[i];
 		i++;
 	}
-	while (s2[j])
-	{
-		join_str[i] = s2[j];
-		i++;
-		j++;
-	}
-	join_str[i] = '\0';
-	return (join_str);
+	if (dstsize < srcsize)
+		dst[dstsize - 1] = '\0';
+	else if (dstsize != 0)
+		dst[i] = '\0';
+	return (srcsize);
 }
