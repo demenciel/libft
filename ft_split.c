@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-static size_t count_words(const char *str, char c)
+static size_t	count_words(const char *str, char c)
 {
 	size_t	count;
 	size_t	flag;
-	
+
 	count = 0;
 	flag = 0;
 	while (*str)
@@ -48,6 +48,20 @@ static char	*word_dup(const char *str, int start, int end)
 	return (word);
 }
 
+static char	*check_error(char const *s, char c)
+{
+	int	i;
+	char *n_str;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+			ft_memmove(n_str, s, ft_strlen())
+	}
+	
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -57,10 +71,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s || !(tab = malloc((count_words(s, c) + 1) * sizeof(char *))))
 		return (NULL);
+	check_error;
 	i = 0;
 	j = 0;
 	index = -1;
-	while (i <= ft_strlen(s))
+	while (i < ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
@@ -71,8 +86,8 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	if(index > 0 && s[i-1] != c)
-        tab[j++] = word_dup(s, index, i);
+	if (index > 0 && s[i - 1] != c)
+		tab[j++] = word_dup(s, index, i);
 	tab[j] = NULL;
 	return (tab);
 }
