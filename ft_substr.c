@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-char	*ft_substr(const char *str, unsigned int start, size_t len)
+char *ft_substr(const char *str, unsigned int start, size_t len)
 {
-	char			*new_str;
-	unsigned int	i;
-	unsigned int	j;
+	char *new_str;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
 	j = 0;
-	new_str = (char*)malloc((len + 1) * sizeof(*str));
+	new_str = (char *)malloc((len + 1) * sizeof(*str));
 	if (!new_str)
 		return (NULL);
 	while (str[i])
