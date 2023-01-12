@@ -52,8 +52,7 @@ char *ft_itoa(int n)
     }
     while (div_pow > 0)
     {
-        n_str[i] = (n / div_pow % 10 + 48);
-        i++;
+        n_str[i++] = (n / div_pow % 10 + 48);
         div_pow = div_pow / 10;
     }
     n_str[i] = '\0';
@@ -62,7 +61,7 @@ char *ft_itoa(int n)
 
 int main()
 {
-    int n = 456;
+    int n = -4568172;
 
     printf("%s", ft_itoa(n));
 }
