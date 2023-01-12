@@ -16,15 +16,22 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 {
 	char			*new_str;
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	if (!str || !len)
-		return (str);
-	new_str = malloc((len - start) + 1 * sizeof(char));
+	j = 0;
+	new_str = (char*)malloc((len + 1) * sizeof(*str));
 	if (!new_str)
 		return (NULL);
-	while (start < len)
-		new_str[i++] = str[start++];
-	new_str[i] = '\0';
+	while (str[i])
+	{
+		if (i >= start && j < len)
+		{
+			new_str[j] = str[i];
+			j++;
+		}
+		i++;
+	}
+	new_str[j] = '\0';
 	return (new_str);
 }
