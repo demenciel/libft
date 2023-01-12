@@ -1,6 +1,16 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/12 13:17:06 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/12 13:17:27 by acouture         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* #include "libft.h"
 
 char *f(unsigned int i, char c)
 {
@@ -39,4 +49,4 @@ int main()
     
 	str2 = ft_strmapi(str1, f);
 	printf("%s\n", str2);
-}
+} */
