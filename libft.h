@@ -15,8 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <ctype.h>
+# include <unistd.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -40,6 +39,10 @@ void	*ft_memmove(void *dst, void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void    ft_striteri(char *s, void (*f)(unsigned int, char *));
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);

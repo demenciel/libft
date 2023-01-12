@@ -16,23 +16,23 @@ SRC = *.c
 
 FLAGS = -Wall -Werror -Wextra
 
-all: $(NAME)
-
-$(NAME): libft
-	ar -rc $(NAME) *.o
-	make clean
-
-libft: $(SRC)
-	gcc $(FLAGS) -c $(SRC)
-
 # all: $(NAME)
 
 # $(NAME): libft
-# 	gcc $(FLAGS) -o $(NAME) *.o
+# 	ar -rc $(NAME) *.o
 # 	make clean
 
 # libft: $(SRC)
-# 	gcc -c $(SRC)
+# 	gcc $(FLAGS) -c $(SRC)
+
+all: $(NAME)
+
+$(NAME): libft
+	gcc $(FLAGS) -o $(NAME) *.o
+	make clean
+
+libft: $(SRC)
+	gcc -c $(SRC)
 
 clean:
 	rm -f *.o
