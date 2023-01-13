@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:49:21 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 14:31:15 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/13 09:51:57 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 	if (!dst && !src)
 		return (NULL);
 	if (dest < source)
-	{
 		return (ft_memcpy(dest, src, len));
-	}
 	else
 	{
 		i = len;

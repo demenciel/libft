@@ -1,14 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/13 09:53:15 by acouture          #+#    #+#             */
+/*   Updated: 2023/01/13 09:53:36 by acouture         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }
-
-/* int main(void)
-{
-    char c;
-    c = 'A';
-    ft_putchar_fd(c, STDOUT_FILENO);
-    return 0;
-} */

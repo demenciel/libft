@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:23:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 14:10:15 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/13 09:29:18 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	total_size = (count * size);
 	ptr = malloc(total_size);
-	if (ptr)
-		ft_memset(ptr, 0, total_size);
+	if (!ptr)
+		return (0);
+	ft_bzero(ptr, total_size);
 	return (ptr);
 }

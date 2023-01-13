@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:50:48 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 15:26:33 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/13 10:00:18 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	i = dstlen;
-	if (!src)
+	if (!src || !dst)
 		return (0);
 	if (dstsize == 0)
 		return (srclen);

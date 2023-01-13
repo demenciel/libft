@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-static int count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
-	int j;
-	int i;
-	char last;
+	int		j;
+	int		i;
+	char	last;
 
 	i = 0;
 	j = 0;
@@ -31,12 +31,12 @@ static int count_words(const char *str, char c)
 	return (j);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **tab;
-	int i;
-	int j;
-	int k;
+	char	**tab;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
