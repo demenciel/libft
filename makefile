@@ -47,6 +47,11 @@ SRC =	ft_atoi.c \
 	 	ft_tolower.c \
 	 	ft_toupper.c \
 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+
+BONUS_OBJS = $(BONUS:.c=.o)
+
 OBJS = $(SRC:%.c=%.o)
 
 CC = gcc
@@ -69,3 +74,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus:	$(OBJS) $(BONUS_OBJS)
+		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
