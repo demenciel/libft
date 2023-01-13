@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:33:41 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/10 12:58:49 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/13 13:18:40 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*dest;
 	unsigned char	*source;
 
+	if (!src)
+		return (dst);
 	dest = (unsigned char *)dst;
 	source = (unsigned char *)src;
 	i = 0;

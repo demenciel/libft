@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:14:24 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/13 10:15:19 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/13 13:39:12 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,29 @@ static char	int_to_char(int n)
 	return (n + '0');
 }
 
+static char	*malloc_str(int n)
+{
+	char	*n_str;
+
+	if (n < 0)
+		n_str = (char *)malloc(ft_itoa_len(n) + 2 * (sizeof(char)));
+	else
+		n_str = (char *)malloc(ft_itoa_len(n) + 1 * (sizeof(char)));
+	return (n_str);
+}
+
 char	*ft_itoa(int n)
 {
-	int		n_len;
 	int		i;
 	int		div_pow;
 	char	*n_str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	n_len = ft_itoa_len(n);
-	n_str = malloc((n_len + 2) * (sizeof(char)));
+	n_str = malloc_str(n);
 	if (!n_str)
 		return (NULL);
-	div_pow = ft_pow(n_len);
+	div_pow = ft_pow(ft_itoa_len(n));
 	i = 0;
 	if (n < 0)
 	{
