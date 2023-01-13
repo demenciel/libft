@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 13:50:11 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/13 10:07:04 by acouture         ###   ########.fr       */
+/*   Updated: 2023/01/13 10:34:51 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	needle_len;
 
-	if (!needle)
-		return ((char*)haystack);
+	if (!*needle)
+		return ((char *)haystack);
 	needle_len = ft_strlen(needle);
 	while (*haystack != '\0' && len-- >= needle_len)
 	{
