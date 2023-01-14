@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/01/13 13:14:41 by acouture         ###   ########.fr        #
+#    Updated: 2023/01/14 16:35:52 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,8 @@ BONUS = ft_lstnew.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
