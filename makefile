@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/01/14 16:35:52 by acouture         ###   ########.fr        #
+#    Updated: 2023/01/16 12:26:13 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,16 +63,12 @@ OBJS = $(SRC:%.c=%.o)
 
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
-all: $(NAME)
+all: $(NAME) $(SRC)
 
-$(NAME): libft
+$(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
-	make clean
-
-libft: $(SRC)
-	$(CC) $(FLAGS) -c $(SRC)
 
 clean:
 	rm -f $(OBJS)
@@ -84,3 +80,5 @@ re: fclean all
 
 bonus:	$(OBJS) $(BONUS_OBJS)
 		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+.PHONY: all clean fclean re bonus
