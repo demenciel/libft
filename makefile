@@ -29,7 +29,7 @@ SRC =	ft_atoi.c \
 	 	ft_putchar_fd.c \
 	 	ft_putendl_fd.c \
 	 	ft_putnbr_fd.c \
-	 	ft_putstring_fd.c \
+	 	ft_putstr_fd.c \
 	 	ft_split.c \
 	 	ft_strchr.c \
 	 	ft_strdup.c \
@@ -68,7 +68,7 @@ CFLAGS = -Wall -Werror -Wextra
 all: $(NAME) $(SRC)
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
