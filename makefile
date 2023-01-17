@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/01/16 12:26:13 by acouture         ###   ########.fr        #
+#    Updated: 2023/01/17 14:44:04 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRC =	ft_atoi.c \
 	 	ft_tolower.c \
 	 	ft_toupper.c \
 
-BONUS = ft_lstnew.c \
+SRC_BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -57,7 +57,7 @@ BONUS = ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 
-BONUS_OBJS = $(BONUS:.c=.o)
+BONUS_OBJS = $(SRC_BONUS:.c=.o)
 
 OBJS = $(SRC:%.c=%.o)
 
