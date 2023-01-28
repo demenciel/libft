@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
+#    By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/01/17 14:44:04 by acouture         ###   ########.fr        #
+#    Updated: 2023/01/28 15:30:06 by utilisateur      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,17 @@ SRC =	ft_atoi.c \
 	 	ft_substr.c \
 	 	ft_tolower.c \
 	 	ft_toupper.c \
+		libft/ft_printf/ft_itoa_to_hexa.c \
+		libft/ft_printf/ft_printf.c \
+		libft/ft_printf/ft_putchar_fd.c \
+		libft/ft_printf/ft_putnbr_fd.c \
+		libft/ft_printf/ft_putnbr_unsigned_fd.c \
+		libft/ft_printf/ft_putpointer_fd.c \
+		libft/ft_printf/ft_putstr_fd.c \
+		libft/ft_printf/ft_strlen.c \
+		libft/get_next_line/get_next_line_utils.c
+		libft/get_next_line/get_next_line.c
+
 
 SRC_BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -65,7 +76,7 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-all: $(NAME) $(SRC)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
