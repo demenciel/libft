@@ -6,13 +6,14 @@
 #    By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/01/28 15:30:06 by utilisateur      ###   ########.fr        #
+#    Updated: 2023/01/28 15:55:11 by utilisateur      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = a
 
-SRC =	ft_atoi.c \
+SRC =	main.c \
+		ft_atoi.c \
 	 	ft_bzero.c \
 		ft_calloc.c \
 	 	ft_isalnum.c \
@@ -46,30 +47,29 @@ SRC =	ft_atoi.c \
 	 	ft_substr.c \
 	 	ft_tolower.c \
 	 	ft_toupper.c \
-		libft/ft_printf/ft_itoa_to_hexa.c \
-		libft/ft_printf/ft_printf.c \
-		libft/ft_printf/ft_putchar_fd.c \
-		libft/ft_printf/ft_putnbr_fd.c \
-		libft/ft_printf/ft_putnbr_unsigned_fd.c \
-		libft/ft_printf/ft_putpointer_fd.c \
-		libft/ft_printf/ft_putstr_fd.c \
-		libft/ft_printf/ft_strlen.c \
-		libft/get_next_line/get_next_line_utils.c
-		libft/get_next_line/get_next_line.c
-
-
-SRC_BONUS = ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
-
-BONUS_OBJS = $(SRC_BONUS:.c=.o)
-
+		\
+		ft_printf/ft_itoa_to_hexa.c \
+		ft_printf/ft_printf.c \
+		ft_printf/ft_putchar_printf.c \
+		ft_printf/ft_putnbr_printf.c \
+		ft_printf/ft_putnbr_unsigned_printf.c \
+		ft_printf/ft_putpointer_fd.c \
+		ft_printf/ft_putstr_printf.c \
+		ft_printf/ft_strlen_printf.c \
+		\
+		get_next_line/get_next_line_utils.c \
+		get_next_line/get_next_line.c \
+		\
+		lst/ft_lstnew.c \
+		lst/ft_lstadd_front.c \
+		lst/ft_lstsize.c \
+		lst/ft_lstlast.c \
+		lst/ft_lstadd_back.c \
+		lst/ft_lstdelone.c \
+		lst/ft_lstclear.c \
+		lst/ft_lstiter.c \
+		lst/ft_lstmap.c \
+		
 OBJS = $(SRC:%.c=%.o)
 
 CC = gcc
@@ -79,7 +79,7 @@ CFLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
@@ -89,7 +89,4 @@ fclean: clean
 
 re: fclean all
 
-bonus:	$(OBJS) $(BONUS_OBJS)
-		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
