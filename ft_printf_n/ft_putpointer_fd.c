@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpointer_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*   By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:30:15 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/18 14:24:04 by acouture         ###   ########.fr       */
+/*   Updated: 2023/02/05 09:39:52 by utilisateur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_pointer_to_hexa(long long unsigned nb)
 	unsigned int	i;
 
 	if (nb == 0)
-		ft_putnbr_fd(0, 1);
+		ft_putnbr_printf(0, 1);
 	base = "0123456789abcdef";
 	str = malloc(sizeof(char) * n_len(nb) + 1);
 	if (!str)
@@ -50,7 +50,7 @@ static void	ft_pointer_to_hexa(long long unsigned nb)
 		i--;
 	}
 	write(1, "0x", 2);
-	ft_putstr_fd(str, 1);
+	ft_putstr_printf(str, 1);
 	free(str);
 }
 

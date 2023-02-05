@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*   By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:00:32 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/26 13:51:28 by acouture         ###   ########.fr       */
+/*   Updated: 2023/02/05 09:41:44 by utilisateur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 #  define BUFFER_SIZE 42
 # endif
 
-char	*ft_strchr(char *str, int c);
-size_t	ft_strlen(char *str);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strchr_get(char *str, int c);
+size_t	ft_strlen_get(char *str);
+char	*ft_strjoin_get(char *s1, char *s2);
 char	*read_saved(int fd, char *saved);
 char	*get_next_line(int fd);
 char	*get_line_out(char *saved);

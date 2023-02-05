@@ -6,13 +6,13 @@
 /*   By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:00:56 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/26 19:24:47 by utilisateur      ###   ########.fr       */
+/*   Updated: 2023/02/05 09:42:27 by utilisateur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen_get(char *str)
 {
 	size_t	len;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr_get(char *str, int c)
 {
 	int	i;
 
@@ -46,13 +46,13 @@ char	*malloc_join(char *saved, char *buf)
 {
 	char	*str;
 
-	str = malloc((((ft_strlen(saved)) + ft_strlen(buf)) + 1) * sizeof(char));
+	str = malloc((((ft_strlen_get(saved)) + ft_strlen_get(buf)) + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	return (str);
 }
 
-char	*ft_strjoin(char *saved, char *buf)
+char	*ft_strjoin_get(char *saved, char *buf)
 {
 	char			*str;
 	unsigned int	i;

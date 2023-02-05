@@ -6,7 +6,7 @@
 #    By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/01/28 15:55:11 by utilisateur      ###   ########.fr        #
+#    Updated: 2023/02/05 09:33:36 by utilisateur      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,17 +48,17 @@ SRC =	main.c \
 	 	ft_tolower.c \
 	 	ft_toupper.c \
 		\
-		ft_printf/ft_itoa_to_hexa.c \
-		ft_printf/ft_printf.c \
-		ft_printf/ft_putchar_printf.c \
-		ft_printf/ft_putnbr_printf.c \
-		ft_printf/ft_putnbr_unsigned_printf.c \
-		ft_printf/ft_putpointer_fd.c \
-		ft_printf/ft_putstr_printf.c \
-		ft_printf/ft_strlen_printf.c \
+		ft_printf_n/ft_itoa_to_hexa.c \
+		ft_printf_n/ft_printf.c \
+		ft_printf_n/ft_putchar_printf.c \
+		ft_printf_n/ft_putnbr_printf.c \
+		ft_printf_n/ft_putnbr_unsigned_printf.c \
+		ft_printf_n/ft_putpointer_fd.c \
+		ft_printf_n/ft_putstr_printf.c \
+		ft_printf_n/ft_strlen_printf.c \
 		\
-		get_next_line/get_next_line_utils.c \
-		get_next_line/get_next_line.c \
+		get_next/get_next_line_utils.c \
+		get_next/get_next_line.c \
 		\
 		lst/ft_lstnew.c \
 		lst/ft_lstadd_front.c \

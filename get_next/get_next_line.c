@@ -6,7 +6,7 @@
 /*   By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:00:36 by acouture          #+#    #+#             */
-/*   Updated: 2023/01/26 19:24:38 by utilisateur      ###   ########.fr       */
+/*   Updated: 2023/02/05 09:42:57 by utilisateur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*read_saved(int fd, char *saved)
 	if (!buf)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_strchr(saved, '\n') && bytes_read != 0)
+	while (!ft_strchr_get(saved, '\n') && bytes_read != 0)
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -31,7 +31,7 @@ char	*read_saved(int fd, char *saved)
 			return (NULL);
 		}
 		buf[bytes_read] = '\0';
-		saved = ft_strjoin(saved, buf);
+		saved = ft_strjoin_get(saved, buf);
 	}
 	free(buf);
 	return (saved);
@@ -51,7 +51,7 @@ char	*read_new_saved(char *saved)
 		free(saved);
 		return (NULL);
 	}
-	str = (char *)malloc(sizeof(char) * (ft_strlen(saved) - i) + 1);
+	str = (char *)malloc(sizeof(char) * (ft_strlen_get(saved) - i) + 1);
 	if (!str)
 		return (NULL);
 	i++;
